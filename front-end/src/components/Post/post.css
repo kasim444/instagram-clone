@@ -1,0 +1,28 @@
+.post {
+  max-width: 100%;
+  box-shadow: none;
+  border: 1px solid var(--color-grey);
+}
+
+.post__header .MuiCardHeader-title,
+.post .MuiTypography-body2 > b {
+  font-weight: 600;
+}
+
+.post__header .MuiAvatar-circle {
+  border: double 2px transparent;
+  border-radius: 40;
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at top left, var(--color-pink), var(--color-orange));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.post__media {
+  height: 0;
+  padding-top: 100%;
+}
+
+.post + .post {
+  margin-top: 60px;
+}
