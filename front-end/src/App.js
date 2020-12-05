@@ -1,12 +1,16 @@
-import { Header, Body } from './components'
+import { Header, Body, Modal } from './components'
 import './app.css'
+import { Provider, rootStore } from './store/root'
 
 function App() {
   return (
-    <div className='app'>
-      <Header />
-      <Body />
-    </div>
+    <Provider value={rootStore}>
+      <div className='app'>
+        <Header />
+        <Body />
+        <Modal />
+      </div>
+    </Provider>
   )
 }
 

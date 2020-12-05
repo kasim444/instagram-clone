@@ -20,6 +20,15 @@
   width: 103px;
 }
 
+.header__navButtonGroup {
+  display: flex;
+  align-items: center;
+}
+
+.header__navButtonGroup > button:last-child {
+  margin-left: 15px;
+}
+
 .header__profileAvatar {
   width: 22px;
   border-radius: 11px;

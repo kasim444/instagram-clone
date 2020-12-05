@@ -2,20 +2,61 @@ import React from 'react'
 import './header.css'
 import LogoSrc from '../../assets/images/instagram_logo.png'
 import AvatarSrc from '../../assets/images/profile_avatar.jpg'
+import { observer } from 'mobx-react-lite'
+import { useStore } from '../../store/root'
+import Button from '@material-ui/core/Button'
+import { auth } from '../../firebase/instance'
 
-function Header() {
+const Header = observer(() => {
+  const { userStore, uiStore } = useStore()
+
+  const signOut = () => {
+    auth
+      .signOut()
+      .then(function () {
+        // Sign-out successful
+        userStore.signOut()
+      })
+      .catch(function (error) {
+        console.log(`sign out error: ${JSON.stringify(error, null, 2)}`)
+        // An error happened.
+      })
+  }
+
   return (
     <div className='header'>
       <div className='header__inner'>
         <img className='header__logo' src={LogoSrc} alt='Instagram Logo' />
-        <img
-          className='header__profileAvatar'
-          src={AvatarSrc}
-          alt='Profile Avatar'
-        />
+        {userStore.isLoggedIn ? (
+          <div className='header__navButtonGroup'>
+            <img
+              className='header__profileAvatar'
+              src={AvatarSrc}
+              alt='Profile Avatar'
+            />
+            <Button variant='contained' color='primary' onClick={signOut}>
+              Log Out
+            </Button>
+          </div>
+        ) : (
+          <div className='header__navButtonGroup'>
+            <Button
+              variant='contained'
+              color='primary'
+              onClick={() => uiStore.setSignInModalOpened(true)}>
+              Sign In
+            </Button>
+            <Button
+              variant='outlined'
+              color='primary'
+              onClick={() => uiStore.setSignUpModalOpened(true)}>
+              Sign Up
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   )
-}
+})
 
 export default Header

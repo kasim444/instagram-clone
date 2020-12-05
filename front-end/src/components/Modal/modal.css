@@ -1,0 +1,27 @@
+.MuiDialog-root .MuiDialogActions-root {
+  justify-content: space-between;
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.MuiDialog-root .MuiDialogTitle-root {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0px;
+}
+
+.MuiDialog-root .MuiDialogTitle-root > img {
+  width: 175px;
+}
+
+.MuiDialog-root .MuiDialogContentText-root {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
+}
+
+.MuiAlert-outlinedError {
+  margin-top: 8px;
+  border: none;
+}
