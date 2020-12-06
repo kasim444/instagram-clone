@@ -21,6 +21,7 @@ const SignInForm = observer(() => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((authUser) => {
+        console.log(`auth user: ${JSON.stringify(authUser, null, 2)}`)
         // Signed in
         userStore.signIn(authUser.user.displayName || '', email)
         uiStore.setSignInModalOpened(false)
@@ -74,7 +75,6 @@ const SignInForm = observer(() => {
           </Button>
         </div>
       </DialogActions>
-      <DialogActions></DialogActions>
     </form>
   )
 })

@@ -1,11 +1,11 @@
 import React from 'react'
 import './header.css'
 import LogoSrc from '../../assets/images/instagram_logo.png'
-import AvatarSrc from '../../assets/images/profile_avatar.jpg'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store/root'
 import Button from '@material-ui/core/Button'
 import { auth } from '../../firebase/instance'
+import Avatar from '@material-ui/core/Avatar'
 
 const Header = observer(() => {
   const { userStore, uiStore } = useStore()
@@ -29,11 +29,20 @@ const Header = observer(() => {
         <img className='header__logo' src={LogoSrc} alt='Instagram Logo' />
         {userStore.isLoggedIn ? (
           <div className='header__navButtonGroup'>
-            <img
+            <Avatar className='header__profileAvatar'>
+              {userStore.userName[0].toUpperCase()}
+            </Avatar>
+            {/* <img
               className='header__profileAvatar'
               src={AvatarSrc}
               alt='Profile Avatar'
-            />
+            /> */}
+            <Button
+              variant='outlined'
+              color='primary'
+              onClick={() => uiStore.setNewPostModalOpened(true)}>
+              New Post
+            </Button>
             <Button variant='contained' color='primary' onClick={signOut}>
               Log Out
             </Button>

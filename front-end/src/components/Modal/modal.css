@@ -25,3 +25,22 @@
   margin-top: 8px;
   border: none;
 }
+
+.upload-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.upload-file__icon {
+  color: #303f9f !important;
+}
+
+.upload-file__icon--upload {
+  margin-right: 10px;
+}
+
+.image-upload-progress {
+  margin-bottom: 1em;
+}

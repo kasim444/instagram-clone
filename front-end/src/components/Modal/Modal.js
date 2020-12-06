@@ -2,10 +2,24 @@ import React from 'react'
 import Dialog from '@material-ui/core/Dialog'
 import { observer } from 'mobx-react-lite'
 import { useStore } from '../../store/root'
-import { SignInForm, SignUpForm } from '../../forms'
+import { SignInForm, SignUpForm, NewPostForm } from '../../forms'
 import './modal.css'
+
 const Modal = observer(() => {
   const { uiStore } = useStore()
+
+  const getForm = () => {
+    switch (uiStore.modalType) {
+      case 'signIn':
+        return <SignInForm />
+      case 'signUp':
+        return <SignUpForm />
+      case 'newPost':
+        return <NewPostForm />
+      default:
+        return <SignInForm />
+    }
+  }
 
   return (
     <Dialog
@@ -17,7 +31,7 @@ const Modal = observer(() => {
       }
       maxWidth='sm'
       fullWidth={true}>
-      {uiStore.modalType === 'signIn' ? <SignInForm /> : <SignUpForm />}
+      {getForm()}
     </Dialog>
   )
 })

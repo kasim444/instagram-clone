@@ -7,15 +7,13 @@ import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
-import AvatarSrc from '../../assets/images/profile_avatar.jpg'
 import './post.css'
 
 function Post({ username, caption, imageUrl }) {
   return (
     <Card className='post'>
       <CardHeader
-        className='post__header'
-        avatar={<Avatar alt={username} src={AvatarSrc} />}
+        avatar={<Avatar>{username[0].toUpperCase()}</Avatar>}
         action={
           <IconButton aria-label='settings'>
             <MoreHorizIcon />
@@ -23,7 +21,7 @@ function Post({ username, caption, imageUrl }) {
         }
         title={username}
       />
-      <CardMedia image={imageUrl} title='Paella dish' className='post__media' />
+      <CardMedia image={imageUrl} title={caption} className='post__media' />
       <CardContent>
         <Typography variant='body2' component='p'>
           <b>{username}</b> {caption}
