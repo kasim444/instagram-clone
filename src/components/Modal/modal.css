@@ -1,6 +1,6 @@
 .MuiDialog-root .MuiDialogActions-root {
   justify-content: space-between;
-  padding: 8px 16px;
+  padding: 8px 24px;
   font-size: 14px;
 }
 
@@ -43,4 +43,16 @@
 
 .image-upload-progress {
   margin-bottom: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  .MuiButton-root {
+    font-size: 8px !important;
+  }
+  .MuiDialog-root .MuiDialogContentText-root {
+    font-size: 10px !important;
+  }
+  .MuiDialogActions-spacing > :not(:first-child) {
+    font-size: 8px !important;
+  }
 }

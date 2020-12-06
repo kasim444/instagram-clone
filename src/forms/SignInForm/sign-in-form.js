@@ -5,9 +5,9 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import { observer } from 'mobx-react-lite'
-import { useStore } from '../store/root'
-import { auth } from '../firebase/instance'
-import LogoSrc from '../assets/images/instagram_logo.png'
+import { useStore } from '../../store/root'
+import { auth } from '../../firebase/instance'
+import LogoSrc from '../../assets/images/instagram_logo.png'
 import Alert from '@material-ui/lab/Alert'
 
 const SignInForm = observer(() => {

@@ -6,12 +6,12 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import Fab from '@material-ui/core/Fab'
 import DialogTitle from '@material-ui/core/DialogTitle'
-import { CircularProgressWithLabel } from '../components'
+import { CircularProgressWithLabel } from '../../components'
 import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate'
-import { db, storage } from '../firebase/instance'
+import { db, storage } from '../../firebase/instance'
 import firebase from 'firebase'
 import Alert from '@material-ui/lab/Alert'
-import { useStore } from '../store/root'
+import { useStore } from '../../store/root'
 
 const NewPostForm = observer(() => {
   const { userStore, uiStore } = useStore()

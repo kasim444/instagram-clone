@@ -30,3 +30,18 @@
 .post + .post {
   margin-top: 60px;
 }
+
+.post__comment + .post__comment {
+  margin-top: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .post {
+    border-radius: 0px !important;
+    border: 0px;
+  }
+
+  .post + .post {
+    margin-top: 15px;
+  }
+}
